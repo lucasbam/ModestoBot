@@ -1,1 +1,1 @@
-web: java -cp ModestoBot.jar com.BarrosCompany.ModestoBot.ModestoBot
+web: java -cp ModestoBot.jar com.BarrosCompany.ModestoBot
