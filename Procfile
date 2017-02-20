@@ -1,1 +1,1 @@
-web: java -cp ModestoBot.jar BarrosCompany.ModestoBot.ModestoBot
+web: java -cp target/classes/;target/dependency/* BarrosCompany.ModestoBot.ModestoBot
