@@ -41,14 +41,14 @@
             <assembleDirectory>target</assembleDirectory>
             <programs>
                 <program>
-                    <mainClass>ModestoBot</mainClass>
+                    <mainClass>BarrosCompany.ModestoDiscord.ModestoBot</mainClass>
                     <name>Bot</name>
                 </program>
             </programs>
           </configuration>
           <executions>
               <execution>
-                  <phase>BarrosCompany</phase><goals><goal>ModestoDiscord</goal></goals>
+                  <phase>package</phase><goals><goal>assemble</goal></goals>
               </execution>
           </executions>
       </plugin>
