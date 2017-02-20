@@ -1,1 +1,1 @@
-web: java -cp target/classes/* BarrosCompany.ModestoBot.ModestoBot
+worker: sh target\classes\BarrosCompany\ModestoBot

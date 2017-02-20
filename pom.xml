@@ -21,6 +21,14 @@
 		</repository>
 	</repositories>
 	
+	<configuration>
+       <assembleDirectory>target</assembleDirectory>
+		<program>
+       		<mainClass>ModestoBot</mainClass>
+       		<name>Bot</name>
+    	</program>
+    </configuration>
+  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
