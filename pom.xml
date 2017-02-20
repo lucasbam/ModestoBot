@@ -10,15 +10,6 @@
   <name>ModestoBot</name>
   <url>http://maven.apache.org</url>
 
-	<plugin>
-  <groupId>com.heroku.sdk</groupId>
-  <artifactId>heroku-maven-plugin</artifactId>
-  <version>0.5.1</version>
-  <configuration>
-    <appName>${heroku.appName}</appName>
-  </configuration>
-	</plugin>
-  
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
@@ -37,7 +28,6 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-    
     <dependency>
 	  <groupId>com.github.austinv11</groupId>
 	  <artifactId>Discord4j</artifactId>
