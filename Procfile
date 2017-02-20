@@ -1,1 +1,1 @@
-web: java -jar target/ModestoBot.jar
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar target/ModestoBot.jar
