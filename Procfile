@@ -1,1 +1,1 @@
-worker: sh target\classes\BarrosCompany\ModestoBot
+worker: sh target/bin/Bot
