@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>BarrosCompany</groupId>
-  <artifactId>ModestoBot</artifactId>
+  <artifactId>ModestoDiscord</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 	
@@ -48,7 +48,7 @@
           </configuration>
           <executions>
               <execution>
-                  <phase>package</phase><goals><goal>assemble</goal></goals>
+                  <phase>BarrosCompany</phase><goals><goal>ModestoDiscord</goal></goals>
               </execution>
           </executions>
       </plugin>
