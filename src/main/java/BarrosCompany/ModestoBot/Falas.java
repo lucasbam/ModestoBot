@@ -5,7 +5,7 @@ import sx.blah.discord.util.RateLimitException;
 
 public class Falas {
 	String[] Comandos = {"Dominó", "Bina", "Olá"};
-	String[] Respostas = {"Gozei","Minha putinha.","Oi beber"};
+	String[] Respostas = {"Instigo","Minha putinha.","Oi bebê"};
 	int index;
 	
 	public void Falar(String comandoEnviado, String id){
