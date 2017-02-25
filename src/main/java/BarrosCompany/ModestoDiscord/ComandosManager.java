@@ -24,7 +24,7 @@ public class ComandosManager {
 		String[] fullCmd = Comando.split(" ");
 		String comando = fullCmd[0];
 		String args = null;
-		
+		System.out.println(Acoes.get(comando));
 		if(fullCmd.length > 1)
 			args = fullCmd[1];
 		
@@ -32,12 +32,12 @@ public class ComandosManager {
 		boolean isAcao = existeComando(Acoes, comando);
 		
 		if (isFala)
-			listaComandos.Responder(Falas.get(comando));
+			listaComandos.Responder(Falas.get(comando.toLowerCase()));
 		
 		if (isAcao){
 			Class<? extends Comandos> c = listaComandos.getClass();
 			try {
-				Method m = c.getDeclaredMethod(Acoes.get(comando));
+				Method m = c.getDeclaredMethod(Acoes.get(comando.toLowerCase()));
 				if(m.getParameterTypes().length > 0)
 					m.invoke(this, args);
 				else
