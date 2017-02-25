@@ -24,7 +24,7 @@ public class ComandosManager {
 		String[] fullCmd = Comando.split(" ");
 		String comando = fullCmd[0];
 		String args = null;
-		System.out.println(Acoes.get(comando));
+		
 		if(fullCmd.length > 1)
 			args = fullCmd[1];
 		
@@ -35,7 +35,14 @@ public class ComandosManager {
 			listaComandos.Responder(Falas.get(comando.toLowerCase()));
 		
 		if (isAcao){
-			Class<? extends Comandos> c = listaComandos.getClass();
+			Class<?> c = null;
+			
+			try {
+				c = Class.forName("Comandos");
+			} catch (ClassNotFoundException e1) {
+				e1.printStackTrace();
+			}
+			
 			try {
 				Method m = c.getDeclaredMethod(Acoes.get(comando.toLowerCase()));
 				if(m.getParameterTypes().length > 0)
