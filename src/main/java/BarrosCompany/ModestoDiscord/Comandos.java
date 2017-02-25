@@ -5,15 +5,13 @@ import sx.blah.discord.util.MissingPermissionsException;
 import sx.blah.discord.util.RateLimitException;
 
 public class Comandos {
-	ComandosManager Manager;
-	
-	public Comandos(){
-		Manager = new ComandosManager();
-	}
-	
+	String channelId;
+
 	public void Responder(String msg){
+		channelId = EventHandler.channelId;
+		
 		try {
-			ModestoBot.Bot.getChannelByID(Manager.getChannelId()).sendMessage(msg);
+			ModestoBot.Bot.getChannelByID(channelId).sendMessage(msg);
 		} catch (MissingPermissionsException e) {
 			e.printStackTrace();
 		} catch (RateLimitException e) {

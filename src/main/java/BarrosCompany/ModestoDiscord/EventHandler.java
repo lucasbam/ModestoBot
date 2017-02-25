@@ -6,23 +6,24 @@ import sx.blah.discord.handle.impl.obj.Message;
 
 public class EventHandler {
 	String Prefixo = "~";
+	static String channelId;
 	ComandosManager Manager;
-//	Falas Boca;
-//	Comandos cmdManager;
-	
+
 	@EventSubscriber
 	public void onReadyEvent(ReadyEvent event){
 		System.out.println("Entrou");
-//		Boca = new Falas();
-//		cmdManager = new Comandos();
-		Manager = new ComandosManager();
+		try{
+			Manager = new ComandosManager();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 	
 	@EventSubscriber
 	public void onMessageEvent(MessageReceivedEvent event){
 		Message m = (Message) event.getMessage();
 		String conteudo = m.getContent();
-		Manager.setChannelId(m.getChannel().getID());
+		channelId = m.getChannel().getID();
 		
 		if(conteudo.startsWith("~"))
 		{
