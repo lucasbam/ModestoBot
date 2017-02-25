@@ -23,14 +23,16 @@ public class ComandosManager {
 	public void checarComando(String Comando){
 		String[] fullCmd = Comando.split(" ");
 		String comando = fullCmd[0];
-		String args = fullCmd[1];
+		String args = null;
+		
+		if(fullCmd.length > 1)
+			args = fullCmd[1];
 		
 		boolean isFala = existeComando(Falas, comando);
 		boolean isAcao = existeComando(Acoes, comando);
 		
-		if (isFala){
+		if (isFala)
 			listaComandos.Responder(Falas.get(comando));
-		}
 		
 		if (isAcao){
 			Class<? extends Comandos> c = listaComandos.getClass();
