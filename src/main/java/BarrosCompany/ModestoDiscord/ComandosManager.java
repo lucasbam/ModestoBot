@@ -36,19 +36,25 @@ public class ComandosManager {
 		
 		if (isAcao){
 			Class<?> c = null;
+			Object o = null;
 			
 			try {
 				c = Class.forName("BarrosCompany.ModestoDiscord.Comandos");
+				o = c.newInstance();
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
+			} catch (InstantiationException e) {
+				e.printStackTrace();
+			} catch (IllegalAccessException e) {
+				e.printStackTrace();
 			}
 			
 			try {
 				Method m = c.getDeclaredMethod(Acoes.get(comando.toLowerCase()));
 				if(m.getParameterTypes().length > 0)
-					m.invoke(c, args);
+					m.invoke(o, args);
 				else
-					m.invoke(c);
+					m.invoke(o);
 			} catch(InvocationTargetException x){
 				x.printStackTrace();
 			} catch (NoSuchMethodException e) {
