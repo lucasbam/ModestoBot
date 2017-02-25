@@ -38,7 +38,7 @@ public class ComandosManager {
 			Class<?> c = null;
 			
 			try {
-				c = Class.forName("Comandos");
+				c = Class.forName("BarrosCompany.ModestoDiscord.Comandos");
 			} catch (ClassNotFoundException e1) {
 				e1.printStackTrace();
 			}
