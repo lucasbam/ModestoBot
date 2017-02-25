@@ -46,9 +46,9 @@ public class ComandosManager {
 			try {
 				Method m = c.getDeclaredMethod(Acoes.get(comando.toLowerCase()));
 				if(m.getParameterTypes().length > 0)
-					m.invoke(this, args);
+					m.invoke(c, args);
 				else
-					m.invoke(this);
+					m.invoke(c);
 			} catch(InvocationTargetException x){
 				x.printStackTrace();
 			} catch (NoSuchMethodException e) {
