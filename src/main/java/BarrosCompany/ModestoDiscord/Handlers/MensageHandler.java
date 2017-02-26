@@ -10,8 +10,11 @@ public class MensageHandler {
 	public static void enviarMensagem(String resposta, IMessage message){
 		try {
 			message.getChannel().sendMessage(resposta);
-		} catch (MissingPermissionsException | RateLimitException | DiscordException e) {
-			// TODO Auto-generated catch block
+		} catch (MissingPermissionsException e) {
+			e.printStackTrace();
+		} catch (RateLimitException e) {
+			e.printStackTrace();
+		} catch (DiscordException e) {
 			e.printStackTrace();
 		}
 	}
