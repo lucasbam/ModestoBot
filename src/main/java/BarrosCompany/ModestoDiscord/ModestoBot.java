@@ -1,5 +1,6 @@
 package BarrosCompany.ModestoDiscord;
 
+import BarrosCompany.ModestoDiscord.Handlers.EventHandler;
 import sx.blah.discord.api.ClientBuilder;
 
 import sx.blah.discord.api.IDiscordClient;
@@ -13,7 +14,6 @@ public class ModestoBot {
 	public static void main(String[] args) throws Exception {
 		Bot = getClient(Token);
 		Bot.getDispatcher().registerListener(new EventHandler());
-		new Leitor();
 	}
 	
 	public static IDiscordClient getClient(String Token) throws DiscordException{
