@@ -68,7 +68,7 @@ public class EventHandler {
 			   String[] linha = br.readLine().split("=");
 			   System.out.println(linha[1]);
 			   Class<?> c = Class.forName("BarrosCompany.ModestoDiscord.Commands." + linha[1]);
-			   Object o = c.newInstance();
+			   final Object o = c.newInstance();
 			   final Method m = c.getDeclaredMethod("Executar", IMessage.class);
 	
 			   Runnable e = new Runnable(){
