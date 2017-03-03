@@ -20,7 +20,7 @@ public class EventHandler {
 	private IMessage message;
 	
 	public EventHandler() throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException{
-		getFalas();
+		Falas = HashHandler.Falas;
 		getComandos();
 	}
 	
@@ -32,31 +32,19 @@ public class EventHandler {
 	@EventSubscriber
 	public void onMessageEvent(MessageReceivedEvent event){
 		message = event.getMessage();
-		String[] arr = message.getContent().substring(1).split(" "); 
-				
 		if(message.getAuthor().isBot())
 			return;
 		
 		if(message.toString().startsWith(Prefixo))
 		{
+			String[] arr = message.getContent().substring(1).split(" "); 
+			
 			if(isFala(arr[0]))
 				MensageHandler.enviarMensagem(Falas.get(arr[0]), message);
 			
 			if(isComando(arr[0]))
 				Comandos.get(arr[0]).run();
 		}
-	}
-
-	private void getFalas() throws IOException{
-		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("Dialogo.txt"), "UTF-8"));
-		Falas = new Hashtable<String, String>();
-		
-		while(br.ready()){
-			String[] linha = br.readLine().split("=");
-			Falas.put(linha[0], linha[1]);   
-		}
-		
-		br.close();
 	}
 	
 	private void getComandos() throws IOException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException{
@@ -66,7 +54,6 @@ public class EventHandler {
 		
 		while(br.ready()){
 			   String[] linha = br.readLine().split("=");
-			   System.out.println(linha[1]);
 			   Class<?> c = Class.forName("BarrosCompany.ModestoDiscord.Commands." + linha[1]);
 			   final Object o = c.newInstance();
 			   final Method m = c.getDeclaredMethod("Executar", IMessage.class);
@@ -86,6 +73,7 @@ public class EventHandler {
 			 }
 		
 		br.close();
+		System.out.println(Comandos);
 	}
 	
 	private boolean isFala(String f){

@@ -1,6 +1,10 @@
 package BarrosCompany.ModestoDiscord;
 
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+
 import BarrosCompany.ModestoDiscord.Handlers.EventHandler;
+import BarrosCompany.ModestoDiscord.Handlers.HashHandler;
 import sx.blah.discord.api.ClientBuilder;
 
 import sx.blah.discord.api.IDiscordClient;
@@ -11,9 +15,10 @@ public class ModestoBot {
 	
 	public static IDiscordClient Bot;
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws DiscordException, IOException, ClassNotFoundException, InstantiationException, IllegalAccessException, NoSuchMethodException, SecurityException, IllegalArgumentException, InvocationTargetException {
 		Bot = getClient(Token);
 		Bot.getDispatcher().registerListener(new EventHandler());
+		new HashHandler();
 	}
 	
 	public static IDiscordClient getClient(String Token) throws DiscordException{

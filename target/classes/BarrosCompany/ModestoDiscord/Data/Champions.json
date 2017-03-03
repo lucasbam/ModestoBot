@@ -1,0 +1,41 @@
+{
+  "Champions":
+  [
+    {
+  	  "id": 1,
+  	  "nome": "teemo", 
+  	  "dica": "Te mata até morto",
+      "representacao": ":smiling_imp: :mushroom:"
+    },
+    {
+      "id": 2,
+      "nome": "bardo",
+      "dica": "Quando menos se espera, todos têm zonyas.",
+      "representacao": ":musical_note: :baby_chick: :baby_chick: :baby_chick:"
+    },
+	{
+      "id": 3,
+      "nome": "hecarim",
+      "dica": "Muito fácil para eu dar dicas.",
+      "representacao": ":horse:"
+    },
+	{
+      "id": 4,
+      "nome": "gragas",
+      "dica": "Há apenas um bebum no jogo.",
+      "representacao": ":beer:"
+    },
+	{
+      "id": 5,
+      "nome": "katarina",
+      "dica": "Rodou, pentakill",
+      "representacao": ":dagger: :o:"
+    },
+	{
+      "id": 6,
+      "nome": "elise",
+      "dica": "Há apenas um aracnideo no jogo.",
+      "representacao": ":spider_web:"
+    },
+  ]
+}
